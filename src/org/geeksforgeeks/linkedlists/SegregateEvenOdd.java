@@ -18,9 +18,6 @@ Output: 8->12->10->NULL
 // If all numbers are odd then do not change the list
 Input: 1->3->5->7->NULL
 Output: 1->3->5->7->NULL
-
-T:O(n)
-S:O(1)
  * @author Shiva
  *
  */
@@ -67,6 +64,7 @@ public class SegregateEvenOdd implements Iterable<SegregateEvenOdd.Node> {
 		Node prev = new Node(0);
 		prev.next = head;
 		int length = 0;
+		// finds length
 		for (Node temp = head; temp != null; temp = temp.next, length++);
 		Node temp = head, next = null;
 		while (length-- > 0) {
