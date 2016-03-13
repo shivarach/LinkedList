@@ -5,6 +5,7 @@ import java.util.Iterator;
 import javax.activity.InvalidActivityException;
 /**
  * Detect and remove cycle in linked list
+ * Find DetectAndRemoveCycleInSLL_39.png and DetectAndRemoveCycleInSLL_39_2
  * @author Shiva
  *
  * @param <Item>
@@ -64,7 +65,7 @@ public class DetectAndRemoveCycleInSLL_39<Item> implements Iterable<Item> {
 				slowP = slowP.next;
 				fastP = fastP.next.next;
 				
-				if (slowP == fastP)
+				if (slowP == fastP) // both pointers meet if there exists a cycle
 					return slowP;
 			}
 			return null;
