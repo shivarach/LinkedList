@@ -1,8 +1,30 @@
 package org.geeksforgeeks.linkedlists;
 
 import java.util.Iterator;
+/**
+ * Given two numbers represented by two lists, write a function that returns sum list. The sum list is list representation of addition of two input numbers.
 
-public class AddTwoNumbersRepresentedByLL implements Iterable<AddTwoNumbersRepresentedByLL.Node> {
+Example 1
+
+Input:
+  First List: 5->6->3  // represents number 365
+  Second List: 8->4->2 //  represents number 248
+Output
+  Resultant list: 3->1->6  // represents number 613
+Example 2
+
+Input:
+  First List: 7->5->9->4->6  // represents number 64957
+  Second List: 8->4 //  represents number 48
+Output
+  Resultant list: 5->0->0->5->6  // represents number 65005
+  
+ * T: O(m + n) where m and n are sizes of lls
+ * S: O(1)
+ * @author Shiva
+ *
+ */
+public class AddTwoNumbersRepresentedByLL_40 implements Iterable<AddTwoNumbersRepresentedByLL_40.Node> {
 
 
 	private Node head = null;
@@ -42,7 +64,7 @@ public class AddTwoNumbersRepresentedByLL implements Iterable<AddTwoNumbersRepre
 	public Node add( Node head1, Node head2 ) {
 		Node temp1 = head1, temp2 = head2;
 		int x = 0, y = 0, carry = 0, sum = 0;
-		AddTwoNumbersRepresentedByLL resultedLL = new AddTwoNumbersRepresentedByLL();
+		AddTwoNumbersRepresentedByLL_40 resultedLL = new AddTwoNumbersRepresentedByLL_40();
 		while (temp1 != null || temp2 != null) {
 			x = (temp1 == null) ? 0 :  temp1.data;
 			y = (temp2 == null) ? 0 : temp2.data;
@@ -81,7 +103,7 @@ public class AddTwoNumbersRepresentedByLL implements Iterable<AddTwoNumbersRepre
 
 	public static void main(String[] args) {
 		
-		AddTwoNumbersRepresentedByLL llist1 = new AddTwoNumbersRepresentedByLL();
+		AddTwoNumbersRepresentedByLL_40 llist1 = new AddTwoNumbersRepresentedByLL_40();
 		llist1.addItem(4);
 		llist1.addItem(3);
 		llist1.addItem(2);
@@ -91,7 +113,7 @@ public class AddTwoNumbersRepresentedByLL implements Iterable<AddTwoNumbersRepre
 		for (Node i : llist1)
 			System.out.print(i.data + " ");
 		
-		AddTwoNumbersRepresentedByLL llist2 = new AddTwoNumbersRepresentedByLL();
+		AddTwoNumbersRepresentedByLL_40 llist2 = new AddTwoNumbersRepresentedByLL_40();
 		llist2.addItem(7);
 		llist2.addItem(6);
 		llist2.addItem(5);
@@ -102,7 +124,7 @@ public class AddTwoNumbersRepresentedByLL implements Iterable<AddTwoNumbersRepre
 		
 		System.out.println("\nSum of 4321 + 765 = 5086" );
 		
-		AddTwoNumbersRepresentedByLL addedLL = new AddTwoNumbersRepresentedByLL();
+		AddTwoNumbersRepresentedByLL_40 addedLL = new AddTwoNumbersRepresentedByLL_40();
 		addedLL.head = addedLL.add(llist1.head, llist2.head);
 		System.out.print("After adding the new linked list is: ");
 		for (Node i : addedLL)
