@@ -25,7 +25,7 @@ public class MergeSortOfSLL_34<Item extends Comparable<Item>> implements
 
 	public void mergeSort() {
 
-		mergeSort(head);
+		head = mergeSort(head);
 	}
 
 	private Node mergeSort(Node head1) {
@@ -37,7 +37,7 @@ public class MergeSortOfSLL_34<Item extends Comparable<Item>> implements
 		mergeSort(b);
 		return merge(a, b);
 	}
-	
+
 	/**
 	 * Divides the linked list into two halves and returns head of second half
 	 * of ll
@@ -69,31 +69,22 @@ public class MergeSortOfSLL_34<Item extends Comparable<Item>> implements
 		Node left = a, right = b;
 		Node head = new Node(null);
 		Node tail = head;
-		try {
-			while (true) {
-				if (left == null) {
-					tail.next = right;
-					return head.next;
-				} else if (right == null) {
-					tail.next = left;
-					return head.next;
-				} else if (left.data.compareTo(right.data) <= 0) {
-					tail.next = left;
-					left = left.next;
-					tail = tail.next;
-				} else {
-					tail.next = right;
-					right = right.next;
-					tail = tail.next;
-				}
+		while (true) {
+			if (left == null) {
+				tail.next = right;
+				return head.next;
+			} else if (right == null) {
+				tail.next = left;
+				return head.next;
+			} else if (left.data.compareTo(right.data) <= 0) {
+				tail.next = left;
+				left = left.next;
+				tail = tail.next;
+			} else {
+				tail.next = right;
+				right = right.next;
+				tail = tail.next;
 			}
-		} finally {
-			Node temp = head.next;
-			while (temp != null) {
-				System.out.print(temp.data + " ");
-				temp = temp.next;
-			}
-			System.out.println("*");
 		}
 	}
 
@@ -119,9 +110,9 @@ public class MergeSortOfSLL_34<Item extends Comparable<Item>> implements
 	public static void main(String[] args) {
 
 		MergeSortOfSLL_34<Integer> llist = new MergeSortOfSLL_34<Integer>();
-		/*llist.addItem(6);
-		llist.addItem(5);
-		llist.addItem(3);*/
+		/*
+		 * llist.addItem(6); llist.addItem(5); llist.addItem(3);
+		 */
 		llist.addItem(8);
 		llist.addItem(1);
 		llist.addItem(7);
@@ -130,8 +121,9 @@ public class MergeSortOfSLL_34<Item extends Comparable<Item>> implements
 		System.out.print("\n Linked list: ");
 		for (Integer i : llist)
 			System.out.print(i + " ");
-		
-		System.out.println("\n\n############# After merge sort ##############\n");
+
+		System.out
+				.println("\n\n############# After merge sort ##############\n");
 		llist.mergeSort();
 		System.out.print("\n Linked list: ");
 		for (Integer i : llist)
