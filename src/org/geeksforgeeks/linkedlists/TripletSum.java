@@ -6,7 +6,7 @@ import java.util.Iterator;
  * Given three linked lists, say a, b and c, find one node from each list such
  * that the sum of the values of the nodes is equal to a given number. For
  * example, if the three linked lists are 12->6->29, 23->5->8 and 90->20->59,
- * and the given number is 101, the output should be tripel “6 5 90″.
+ * and the given number is 101, the output should be tripel "6 5 90".
  * 
  * Algorithm: Reger quadratic algorithm of 3-sum problem in wikipedia
  * 
