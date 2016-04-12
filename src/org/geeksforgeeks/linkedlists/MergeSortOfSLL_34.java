@@ -2,6 +2,14 @@ package org.geeksforgeeks.linkedlists;
 
 import java.util.Iterator;
 
+/**
+ * Merge sort of sll T: O(nlogn) S: O(1) Note: Mergesort of sll doesn't require
+ * extra space
+ * 
+ * @author kmaram
+ *
+ * @param <Item>
+ */
 public class MergeSortOfSLL_34<Item extends Comparable<Item>> implements
 		Iterable<Item> {
 
@@ -33,9 +41,9 @@ public class MergeSortOfSLL_34<Item extends Comparable<Item>> implements
 			return head1;
 		Node a = head1;
 		Node b = divide(head1);
-		mergeSort(a);
-		mergeSort(b);
-		return merge(a, b);
+		Node a1 = mergeSort(a);
+		Node b1 = mergeSort(b);
+		return merge(a1, b1);
 	}
 
 	/**
@@ -110,9 +118,9 @@ public class MergeSortOfSLL_34<Item extends Comparable<Item>> implements
 	public static void main(String[] args) {
 
 		MergeSortOfSLL_34<Integer> llist = new MergeSortOfSLL_34<Integer>();
-		/*
-		 * llist.addItem(6); llist.addItem(5); llist.addItem(3);
-		 */
+		llist.addItem(6);
+		llist.addItem(5);
+		llist.addItem(3);
 		llist.addItem(8);
 		llist.addItem(1);
 		llist.addItem(7);
