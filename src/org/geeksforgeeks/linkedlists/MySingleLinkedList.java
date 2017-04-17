@@ -175,7 +175,7 @@ public class MySingleLinkedList<Item extends Comparable<Item>> implements Iterab
 				addFirst(data);
 			else {
 				Node newNode = new Node(data);
-				prev.next = newNode.next;
+				prev.next = newNode;
 				newNode.next = temp;;
 			}
 		}
@@ -228,6 +228,25 @@ public class MySingleLinkedList<Item extends Comparable<Item>> implements Iterab
 		return head;
 	}
 	
+	public Node reverseRecursive() {
+		Node earlierHead = reverseRecursive(head);
+		earlierHead.next = null;// the above call doesn't set last variable to next
+		return head;
+	}
+	
+	private MySingleLinkedList<Item>.Node reverseRecursive(MySingleLinkedList<Item>.Node x) {
+		if(x == null)
+			return null;
+		if(x.next == null)
+		{
+			head = x;
+			return head;
+		}
+		Node tmp = reverseRecursive(x.next);
+		tmp.next = x;
+		return x;
+	}
+
 	private class ListIterator implements Iterator<Item> {
 		private Node current = head;
 		@Override
@@ -284,6 +303,12 @@ public class MySingleLinkedList<Item extends Comparable<Item>> implements Iterab
 			System.out.print(list + " ");
 		System.out.println("");
 		
+		integerList.insertBefore(1, 5);
+		System.out.println("insertBefore(1, 5)");
+		for (Integer list : integerList)
+			System.out.print(list + " ");
+		System.out.println("");
+		
 		integerList.insertAfter(2, 3);
 		System.out.println("insertAfter(2, 3)");
 		for (Integer list : integerList)
@@ -313,8 +338,13 @@ public class MySingleLinkedList<Item extends Comparable<Item>> implements Iterab
 		for (Integer list : integerList)
 			System.out.print(list + " ");
 		
-		System.out.println("\n*************After reversing linked list***************\n");
+		System.out.println("\n*************After reversing above linked list***************\n");
 		integerList.reverse();
+		for (Integer list : integerList)
+			System.out.print(list + " ");
+		
+		System.out.println("\n*************After reversing above linked list using reverse recursive***************\n");
+		integerList.reverseRecursive();
 		for (Integer list : integerList)
 			System.out.print(list + " ");
 	}
