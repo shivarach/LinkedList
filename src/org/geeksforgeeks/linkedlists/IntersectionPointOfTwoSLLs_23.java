@@ -71,7 +71,7 @@ public class IntersectionPointOfTwoSLLs_23<Item extends Comparable<Item>> implem
 			smallList = smallList.next;
 		}
 		// bigList returns null if two linked lists doesn't intersect
-		return bigList;
+		return bigList;//we can return small list also
 	}
 
 
