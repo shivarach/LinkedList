@@ -29,10 +29,25 @@ public class ReverseLLWithRecursion_16_1<Item> implements Iterable<Item> {
 	}
 	
 	public void reverse() {
-		reverse(head);
+		Node oldHead = reverse(head);
+		oldHead.next = null;
 	}
 	
-	public void reverse(Node temp) {
+	private Node reverse(Node x) {
+		if(x == null)
+			return null;
+		if(x.next == null)
+		{
+			head = x;
+			return head;
+		}
+		Node tmp = reverse(x.next);
+		tmp.next = x;
+		return x;
+		
+	}
+	
+	/*public void reverse(Node temp) {
 		if(temp.next == null) {
 			head = temp;
 			refPointer = head;
@@ -43,7 +58,7 @@ public class ReverseLLWithRecursion_16_1<Item> implements Iterable<Item> {
 		refPointer = temp;
 		refPointer.next = null;// it makes sure that no link occurs between first two nodes(original nodes) of linkedlist
 		return;
-	}
+	}*/
 	@Override
 	public Iterator<Item> iterator() {
 		return new Iterator<Item>() {
