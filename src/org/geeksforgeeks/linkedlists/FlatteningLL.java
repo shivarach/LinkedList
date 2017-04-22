@@ -1,6 +1,7 @@
 package org.geeksforgeeks.linkedlists;
 
 import java.util.Iterator;
+// Note: we can do this with queue, which is easy to understand
 /**Given a linked list where every node represents a linked list and contains two pointers of its type:
 (i) Pointer to next node in the main list (we call it ‘right’ pointer in below code)
 (ii) Pointer to a linked list where this node is head (we call it ‘down’ pointer in below code).

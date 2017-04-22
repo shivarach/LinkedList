@@ -78,7 +78,7 @@ public class AddTwoNumbersRepresentedByLL_40 implements Iterable<AddTwoNumbersRe
 				temp2 = temp2.next;
 		}
 		if (carry > 0)
-			resultedLL.addItem(sum % 10);
+			resultedLL.addItemLast(carry);
 		return resultedLL.head;
 	}
 	
@@ -104,7 +104,7 @@ public class AddTwoNumbersRepresentedByLL_40 implements Iterable<AddTwoNumbersRe
 	public static void main(String[] args) {
 		
 		AddTwoNumbersRepresentedByLL_40 llist1 = new AddTwoNumbersRepresentedByLL_40();
-		llist1.addItem(4);
+		llist1.addItem(9);
 		llist1.addItem(3);
 		llist1.addItem(2);
 		llist1.addItem(1);
@@ -122,7 +122,7 @@ public class AddTwoNumbersRepresentedByLL_40 implements Iterable<AddTwoNumbersRe
 		for (Node i : llist2)
 			System.out.print(i.data + " ");
 		
-		System.out.println("\nSum of 4321 + 765 = 5086" );
+		System.out.println("\nSum of 9321 + 765 = 10086" );
 		
 		AddTwoNumbersRepresentedByLL_40 addedLL = new AddTwoNumbersRepresentedByLL_40();
 		addedLL.head = addedLL.add(llist1.head, llist2.head);
