@@ -3,9 +3,11 @@ package org.geeksforgeeks.linkedlists;
 import java.util.Iterator;
 
 /**
+Look all the three approaches in https://www.geeksforgeeks.org/union-and-intersection-of-two-linked-lists/
+
  * Given two Linked Lists, create union and intersection lists that contain
  * union and intersection of the elements present in the given lists. Order of
- * elments in output lists doesn’t matter. (Assumption is evry ll doesn't have
+ * elments in output lists doesnâ€™t matter. (Assumption is evry ll doesn't have
  * any duplicates)
  * 
  * Example:
