@@ -92,6 +92,8 @@ public class MySingleLinkedList<Item extends Comparable<Item>> implements Iterab
 	 */
 	// O(n)
 	public Item getLast() {
+		if (head == null)
+            		throw new NullPointerException("No elements in linked list");
 		Node temp = head;
 		while(temp.next != null)
 			temp = temp.next;
@@ -120,8 +122,11 @@ public class MySingleLinkedList<Item extends Comparable<Item>> implements Iterab
 			prev = temp;
 			temp = temp.next;
 		}
-			
-		prev.next = null;
+		if(prev != null) {
+            		prev.next = null;
+        	} else {
+            		temp = null;
+        }
 	}
 	
 	/**
